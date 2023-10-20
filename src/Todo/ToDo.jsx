@@ -1,12 +1,16 @@
-    import { useState } from "react";
+    import { useEffect, useState } from "react";
     import { Link } from "react-router-dom";
 
     export default function ToDo() {
+        const listaLocalStorage = localStorage.getItem("lista")
         const [atividade,setAtividade] = useState("");
         const [atividade2,setAtividade2] = useState("");
         const [atividade3,setAtividade3] = useState("");
-        const [lista,setLista] = useState ([]);
+        const [lista,setLista] = useState (listaLocalStorage ? JSON.parse(listaLocalStorage) : []);
         const[id,setId] = useState(Math.random());
+
+        useEffect(() => {localStorage.setItem("lista", JSON.stringify(lista))},[lista]);
+
         const salvar = (a) => {
             a.preventDefault();
             setLista([...lista, {
