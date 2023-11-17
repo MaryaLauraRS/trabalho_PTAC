@@ -67,7 +67,7 @@
                         <span class="card card-body text-center w-25" >
                         <h5 class="card-header">{atividade.atividade} </h5> <br/>
                         <h6  class="card-subtitle mb-2 text-muted fst-italic">Autor: {atividade.atividade2} </h6>
-                        <p class="card-text text-break">Comentario: {atividade.atividade3}</p> <a href="#" class="btn btn-outline-secondary" onClick={(i)=> i.preventDefault(Apagar(atividade.id))} > X </a>
+                        <p class="card-text text-break">Comentario: {atividade.atividade3}</p> <Link class="text-dark text-dark end-50" to={`/detalhe/${atividade.id}`}>ver mais</Link> <a href="#" class="btn btn-outline-secondary" onClick={(i)=> i.preventDefault(Apagar(atividade.id))} > X </a>
                         </span>
                         <br/><br/>
                     </div>
